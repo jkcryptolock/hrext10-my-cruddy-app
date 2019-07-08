@@ -1,15 +1,15 @@
-
 body, html {
-  height: 100%;
   background-image: url("../images/backgroundsix.jpg");
-  background-repeat: no-repeat;
+  background-repeat: round round;
   font-family: 'Helvetica';
-  /*background-position: */
+}
+
+.page {
   padding: 30px;
 }
 
 .header {
-  margin: 20px;
+  margin-top: 50px;
 }
 
 h1 {

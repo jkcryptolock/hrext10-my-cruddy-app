@@ -12,13 +12,13 @@ https://getbootstrap.com/docs/4.3/getting-started/introduction/
 */
 
 body, html {
-  height: 100%;
   background-image: url("../images/backgroundsix.jpg");
-  background-repeat: no-repeat;
+  background-repeat: round round;
   font-family: 'Helvetica';
-  /*background-position: */
-  padding: 30px;
+}
 
+.page {
+  padding: 30px;
 }
 
 .container {
@@ -27,7 +27,7 @@ body, html {
 
 .header {
 	text-align: center;
-	margin-top: 25px;
+	margin-top: 50px;
 	color: #fff;
 	font-size: 2vw;
 	font-weight: bold;
