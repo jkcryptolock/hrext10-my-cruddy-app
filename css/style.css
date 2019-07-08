@@ -11,10 +11,38 @@ inputs (border swag)
 https://getbootstrap.com/docs/4.3/getting-started/introduction/
 */
 
+body, html {
+  height: 100%;
+  background-image: url("../images/backgroundsix.jpg");
+  background-repeat: no-repeat;
+  font-family: 'Helvetica';
+  /*background-position: */
+  padding: 30px;
+
+}
+
+.container {
+	margin-top: 50px;
+}
+
+.header {
+	text-align: center;
+	margin-top: 25px;
+	color: #fff;
+	font-size: 2vw;
+	font-weight: bold;
+	text-shadow: 1px 1px 1px #666, 3px 3px 8px rgba(0,0,0,.5);
+}
+
 th {
   text-decoration: underline;
 }
 
 label {
   text-decoration: underline;
+}
+
+.user {
+	font-size: 1.5vw;
+	opacity: .5;
 }
