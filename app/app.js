@@ -8,11 +8,22 @@
 
 //localStorage functions
 var createItem = function(key, value) {
-  return window.localStorage.setItem(key, value);
+  return window.localStorage.setItem(key, formatter.format(value.replace(/[^0-9.-]/g, '')));
+}
+
+var addToItem = function(key, value) {
+  let cValue = window.localStorage.getItem(key);
+  console.log(cValue)
+  cValue = cValue.replace(/[^0-9.-]/g, '');
+  let addValue = value.replace(/[^0-9.-]/g, '');
+  console.log(addValue)
+  let newValue = +cValue + +addValue; 
+  console.log(newValue);
+  return window.localStorage.setItem(key, formatter.format(newValue));
 }
 
 var updateItem = function(key, value) {
-  return window.localStorage.setItem(key, value);
+  return window.localStorage.setItem(key, formatter.format(value.replace(/[^0-9.-]/g, '')));
 }
 
 var deleteItem = function(key) {
@@ -108,32 +119,33 @@ var getUserName = function() {
     return vars.email.replace('%40', '@');
 }
 
+
+
 $(document).ready(function() {
   $(`<h1>FINANCR Report for ${month()}</h1>`).appendTo('.header');
-  
+
   showDatabaseContents();
   balance();
   balanceDetails();
 
-  $(`<p class='user'>${getUserName()}</p>`).appendTo('.header');
-
   $('.create').click(function() {
     if (getKeyInput() !== '' && getValueInput() !== '') {
       if (keyExists(getKeyInput())) {
-        if(confirm('A transaction with this description already exists. Would you like to update instead?')) {
-          updateItem(getKeyInput(), getValueInput());
-          showDatabaseContents();
-          balance();
-          balanceDetails();
-        }
+        addToItem(getKeyInput(), getValueInput());
+        showDatabaseContents();
+        balance();
+        balanceDetails();
+        resetInputs();
       } else {
+        console.log('wut')
         createItem(getKeyInput(), getValueInput());
         showDatabaseContents();
         balance();
         balanceDetails();
         resetInputs();
       }
-    } else  {
+    }
+       else  {
       alert('Please include a description and amount.');
     }
   });
@@ -147,7 +159,7 @@ $(document).ready(function() {
         balanceDetails();
         resetInputs();
       } else {
-        alert('This transaction can not be found.');
+        alert('This transaction description can not be found.');
       }
     } else {
       alert('Please include a description and amount.');
@@ -163,7 +175,7 @@ $(document).ready(function() {
         balanceDetails();
         resetInputs();
       } else {
-        alert('This transaction can not be found.');
+        alert('This transaction description can not be found.');
       }
     } else {
       alert('A description is required.');
@@ -175,8 +187,16 @@ $(document).ready(function() {
   })
 
   $('.clear').click(function() {
+    let cbalance = 0
+    for (var i = 0; i < window.localStorage.length; i++) {
+    var key = window.localStorage.key(i);
+    var value = window.localStorage.getItem(key);
+    value = value.replace(/[^0-9.-]/g, '');
+    cbalance += +value;
+    }
     if (confirm('WARNING: Are you sure you want to start tracking a new month? \n                THIS ACTION CANNOT BE UNDONE')) {
       clearDatabase();
+      window.localStorage['Starting Balance'] = formatter.format(cbalance);
       balance();
       balanceDetails();
       showDatabaseContents();
@@ -188,4 +208,46 @@ $(document).ready(function() {
     let input = $('#desc-input');
     input.val(value);
   })
+
+            
+  $('#exampleModal').on('shown.bs.modal', function (e) {
+
+      let obj = {};
+      let array = [];
+
+      for (var i = 0; i < window.localStorage.length; i++) {
+        var key = window.localStorage.key(i);
+        var value = window.localStorage.getItem(key);
+        value = value.replace(/[^0-9.-]/g, '');
+        if (!obj[key]) {
+          obj[key] = +value;
+        } else {
+          obj[key] += +value;
+        }
+      }
+
+      for (var key in obj) {
+        if (key !== 'Starting Balance' && key !== 'Deposits'){
+                  array = array.concat([[key, obj[key]]]);
+                }
+      }
+
+      var chart = c3.generate({
+      bindto: "#chart",
+      donut: {
+        label: {
+          format: function(value){
+            return formatter.format(value);
+          }
+        },
+        title: 'Spending Summary'
+      },
+      data: {
+        // iris data from R
+        columns: array,
+        type : 'donut'
+      }
+  });
+  
+})  
 })

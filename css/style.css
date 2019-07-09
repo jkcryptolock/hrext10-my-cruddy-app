@@ -46,3 +46,7 @@ label {
 	font-size: 1.5vw;
 	opacity: .5;
 }
+
+.c3-chart-arc text {
+    fill: black;
+}

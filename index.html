@@ -4,12 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <title>FINANCR!</title>
-  <script src="https://code.jquery.com/jquery-3.3.1.js"
-          integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-          crossorigin="anonymous">
-  </script>
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.21/c3.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.21/c3.js"></script>
   <link rel="stylesheet" type="text/css" href="css/style.css"> 
  </head>
 <body>
@@ -22,6 +22,9 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
         <li class="nav-item">
+          <a class="nav-link" href='#' data-toggle="modal" data-target="#exampleModal">Spending Summary</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="/Users/JandK/Desktop/HREXT10/hrext10-my-cruddy-app/contact.html">Contact</a>
         </li>
         <li class="nav-item">
@@ -31,6 +34,7 @@
     </div>
   </nav>
   <div class='header'>
+    
   </div>
   <div class="container">
     <div class="row mb-3">
@@ -42,6 +46,7 @@
             </button>
     <div class="dropdown-menu">
       <a class="dropdown-item" id="starting-balance">Starting Balance</a>
+      <a class="dropdown-item" id="deposits">Deposits</a>
       <a class="dropdown-item" id='entertainment'>Entertainment</a>
       <a class="dropdown-item" id='health-care'>Health Care</a>
       <a class="dropdown-item" id='lodging'>Lodging</a>
@@ -52,7 +57,7 @@
       <a class="dropdown-item" id='vehicle-services'>Vehicle Services</a>
     </div>
   </div>
-  <input type="text" id='desc-input' class="form-control" aria-label="Text input with segmented dropdown button" placeholder='Description of Transaction'>
+  <input type="text" id='desc-input' class="key form-control" aria-label="Text input with segmented dropdown button" placeholder='Description of Transaction'>
       </div>
       <div class="input-group col-sm-5">
         <div class="input-group-prepend">
@@ -79,6 +84,24 @@
         <tbody>
         </tbody>
       </table>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Spending Summary</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id='chart'></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
     </div>
   </div>
 </div>

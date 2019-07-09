@@ -18,9 +18,9 @@ Create Read Update and Delete framework using JS
 - [x] Add customer testimonials to login page.
 - [x] Add about section to login page, set About link in navbar to jump to about section on click.
 - [x] Adjust navbar logo on each page to redirect to the splash page on click.
-- [ ] Create dropdown with common transaction descriptions for ease of adding transactions and tracking.
-- [ ] Utilize descriptions of transactions to track spending by category.
-- [ ] Create C3 graph to display information related to spending.
+- [x] Create dropdown with common transaction descriptions for ease of adding transactions and tracking.
+- [x] Utilize descriptions of transactions to track spending by category.
+- [x] Create C3 graph to display information related to spending.
 - [ ] Integrate stock data, or a financial news feed?
 
 
@@ -35,4 +35,4 @@ Create Read Update and Delete framework using JS
 ## Advanced Reqs
 - [ ] update/delete column
 - [ ] button disabling when input values are invalid
-- [ ] integration of C3 graph for spending breakdown
+- [x] integration of C3 graph for spending breakdown
