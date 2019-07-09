@@ -182,4 +182,10 @@ $(document).ready(function() {
       showDatabaseContents();
     }
   })
+
+  $('.dropdown-menu').on('click', '.dropdown-item', function(event) {
+    let value = $(this).text();
+    let input = $('#desc-input');
+    input.val(value);
+  })
 })

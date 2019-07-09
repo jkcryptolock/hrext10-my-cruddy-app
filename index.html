@@ -4,13 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <title>FINANCR!</title>
-  <script
-          src="https://code.jquery.com/jquery-3.3.1.js"
+  <script src="https://code.jquery.com/jquery-3.3.1.js"
           integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-          crossorigin="anonymous"></script>
+          crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  
+  <link rel="stylesheet" type="text/css" href="css/style.css"> 
  </head>
 <body>
 <div class='page'>
@@ -35,10 +35,24 @@
   <div class="container">
     <div class="row mb-3">
       <div class="input-group col-sm-5">
-        <div class="input-group-prepend">
-          <label class="input-group-text">Description</label>
-        </div>
-        <input class="key form-control" type="text" placeholder='Description of Transaction'>
+         <div class="input-group-prepend">
+            <label class="input-group-text">Description</label>
+            <button type="button" class="btn btn-outline-light btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="sr-only">Toggle Dropdown</span>
+            </button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" id="starting-balance">Starting Balance</a>
+      <a class="dropdown-item" id='entertainment'>Entertainment</a>
+      <a class="dropdown-item" id='health-care'>Health Care</a>
+      <a class="dropdown-item" id='lodging'>Lodging</a>
+      <a class="dropdown-item" id='merchandise'>Merchandise</a>
+      <a class="dropdown-item" id='restaurants'>Restaurants</a>
+      <a class="dropdown-item" id='services'>Services</a>
+      <a class="dropdown-item" id='travel'>Travel</a>
+      <a class="dropdown-item" id='vehicle-services'>Vehicle Services</a>
+    </div>
+  </div>
+  <input type="text" id='desc-input' class="form-control" aria-label="Text input with segmented dropdown button" placeholder='Description of Transaction'>
       </div>
       <div class="input-group col-sm-5">
         <div class="input-group-prepend">
