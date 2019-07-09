@@ -13,7 +13,7 @@ https://getbootstrap.com/docs/4.3/getting-started/introduction/
 
 body, html {
   background-image: url("../images/backgroundsix.jpg");
-  background-repeat: round round;
+  background-repeat: no-repeat;
   font-family: 'Helvetica';
 }
 
