@@ -134,4 +134,11 @@ input[type=submit]:hover {
   border-bottom: 1px solid rgba(0, 0, 0, .125);
 }
 
+.footer {
+  margin-top: 50px;
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+}
+
 

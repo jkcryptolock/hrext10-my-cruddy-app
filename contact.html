@@ -2,61 +2,67 @@
 <html>
 <head>
 	<title>FINANCR!</title>
-	<script
-	          src="https://code.jquery.com/jquery-3.3.1.js"
-	          integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-	          crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/contact.css">
 </head>
 <body>
-<div class='page'>
 
-	<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-	  <a class="navbar-brand" href="/Users/JandK/Desktop/HREXT10/hrext10-my-cruddy-app/welcome.html">F</a>
-	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-	    <span class="navbar-toggler-icon"></span>
-	  </button>
-	  <div class="collapse navbar-collapse" id="navbarNav">
-	    <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
-		  <li class="nav-item">
-	        <a class="nav-link" href="/Users/JandK/Desktop/HREXT10/hrext10-my-cruddy-app/questions.html">FAQs</a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" href="/Users/JandK/Desktop/HREXT10/hrext10-my-cruddy-app/login.html">Home</a>
-	      </li>
-	    </ul>
-	  </div>
-	</nav>
+	<div class='page'>
 
-	<div class='header'>
-		<h1>Contact FINANCR</h1>
+		<!-- NAVBAR -->
+
+		<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+		  	<a class="navbar-brand" href="/Users/JandK/Desktop/HREXT10/hrext10-my-cruddy-app/welcome.html">F</a>
+		  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		    	<span class="navbar-toggler-icon"></span>
+		  	</button>
+		  	<div class="collapse navbar-collapse" id="navbarNav">
+		    	<ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+			  		<li class="nav-item">
+		        		<a class="nav-link" href="/Users/JandK/Desktop/HREXT10/hrext10-my-cruddy-app/questions.html">FAQs</a>
+		      		</li>
+		      		<li class="nav-item">
+		        		<a class="nav-link" href="/Users/JandK/Desktop/HREXT10/hrext10-my-cruddy-app/login.html">Home</a>
+		      		</li>
+		    	</ul>
+		  	</div>
+		</nav>
+
+		<!-- HEADER -->
+
+		<div class='header'>
+			<h1>Contact FINANCR</h1>
+		</div>
+
+		<!-- CONTACT CONTAINER -->
+
+		<div class="container">
+		  	<form action="/Users/JandK/Desktop/HREXT10/hrext10-my-cruddy-app/login.html">
+			    <label for="fname">First Name</label>
+			    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+			    <label for="lname">Last Name</label>
+			    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+			    <label for="country">Country</label>
+			    <select id="country" name="country">
+			      	<option value="australia">Australia</option>
+			      	<option value="canada">Canada</option>
+			      	<option value="usa">USA</option>
+			    </select>
+			    <label for="subject">Subject</label>
+			    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+			    <input type="submit" value="Submit">
+		  	</form>
+		</div>
+
+		<!-- FOOTER -->
+
+		<div class='footer'>
+	    	<p>© 2019 FINANCR</p>
+	    	<p>Project Made for Hack Rector HREXT10</p>
+		</div>
+
 	</div>
-
-
-	<div class="container">
-	  	<form action="/Users/JandK/Desktop/HREXT10/hrext10-my-cruddy-app/login.html">
-
-		    <label for="fname">First Name</label>
-		    <input type="text" id="fname" name="firstname" placeholder="Your name..">
-
-		    <label for="lname">Last Name</label>
-		    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-
-		    <label for="country">Country</label>
-		    <select id="country" name="country">
-		      <option value="australia">Australia</option>
-		      <option value="canada">Canada</option>
-		      <option value="usa">USA</option>
-		    </select>
-
-		    <label for="subject">Subject</label>
-		    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-
-		    <input type="submit" value="Submit">
-	  	</form>
-	</div>
-
-</div>
+	
 </body>
 </html>

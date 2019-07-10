@@ -88,7 +88,7 @@ font-family: Helvetica;
 
 .hit-the-basement {
   text-align: left;
-  margin-left: 50px;
+  margin-left: 70px;
   text-shadow: 1px 1px 1px #666, 3px 3px 8px rgba(0,0,0,.5);
 }
 
@@ -104,7 +104,7 @@ body {
   padding: 16px;
   margin: 16px 0;
   width: 50%;
-  margin-left: 50px;
+  margin-left: 70px;
 }
 
 /* Clear floats after containers */
@@ -167,4 +167,11 @@ text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px
 .modal-header .close {
   margin: auto;
   padding: 0px;
+}
+
+.footer {
+  margin-top: 50px;
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
 }

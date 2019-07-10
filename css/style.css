@@ -50,3 +50,10 @@ label {
 .c3-chart-arc text {
     fill: black;
 }
+
+.footer {
+  margin-top: 50px;
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+}
