@@ -9,7 +9,7 @@
 //localStorage functions
 var createItem = function(key, value) {
   return window.localStorage.setItem(key, formatter.format(value.replace(/[^0-9.-]/g, '')));
-}
+};
 
 var addToItem = function(key, value) {
   let cValue = window.localStorage.getItem(key);
@@ -20,19 +20,19 @@ var addToItem = function(key, value) {
   let newValue = +cValue + +addValue; 
   console.log(newValue);
   return window.localStorage.setItem(key, formatter.format(newValue));
-}
+};
 
 var updateItem = function(key, value) {
   return window.localStorage.setItem(key, formatter.format(value.replace(/[^0-9.-]/g, '')));
-}
+};
 
 var deleteItem = function(key) {
   return window.localStorage.removeItem(key);
-}
+};
 
 var clearDatabase = function() {
   return window.localStorage.clear();
-}
+};
 
 var showDatabaseContents = function() {
   $('tbody').html('');
@@ -41,24 +41,24 @@ var showDatabaseContents = function() {
     var key = window.localStorage.key(i);
     $('tbody').append(`<tr><td>${key}</td><td>${window.localStorage.getItem(key)}</td></tr>`)
   }
-}
+};
 
 var keyExists = function(key) {
   return window.localStorage.getItem(key) !== null
-}
+};
 
 var getKeyInput = function() {
   return $('.key').val();
-}
+};
 
 var getValueInput = function() {
   return $('.value').val();
-}
+};
 
 var resetInputs = function() {
   $('.key').val('');
   $('.value').val('');
-}
+};
 
 var month = function() {
   var d = new Date();
@@ -76,7 +76,7 @@ var month = function() {
   month[10] = "November";
   month[11] = "December";
   return month[d.getMonth()];
-}
+};
 
 var balance = function() {
   $('h3').html('');
@@ -88,7 +88,7 @@ var balance = function() {
     cbalance += +value;
   }
   $(`<h3>Current Balance: ${formatter.format(cbalance)}</h3>`).appendTo('.header');
-}
+};
 
 var balanceDetails = function() {
   $('h5').html('');
@@ -104,7 +104,7 @@ var balanceDetails = function() {
     }
   }
   $(`<h5>Credits: ${formatter.format(increases)} | Debits: ${formatter.format(decreases)}</h5>`).appendTo('.header');
-}
+};
 
 var formatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
@@ -117,7 +117,7 @@ var getUserName = function() {
         vars[key] = value;
     });
     return vars.email.replace('%40', '@');
-}
+};
 
 
 
@@ -184,7 +184,7 @@ $(document).ready(function() {
 
   $('.reset').click(function() {
     resetInputs();
-  })
+  });
 
   $('.clear').click(function() {
     let cbalance = 0
@@ -201,13 +201,13 @@ $(document).ready(function() {
       balanceDetails();
       showDatabaseContents();
     }
-  })
+  });
 
   $('.dropdown-menu').on('click', '.dropdown-item', function(event) {
     let value = $(this).text();
     let input = $('#desc-input');
     input.val(value);
-  })
+  });
 
             
   $('#exampleModal').on('shown.bs.modal', function (e) {
@@ -247,7 +247,8 @@ $(document).ready(function() {
         columns: array,
         type : 'donut'
       }
-  });
+      });
   
-})  
-})
+  }); 
+
+});
