@@ -128,6 +128,8 @@ $(document).ready(function() {
   balance();
   balanceDetails();
 
+  $(`<li class="nav-item"><a class="nav-link" href="#">${getUserName()}</a></li>`).appendTo('.navbar-nav');
+
   $('.create').click(function() {
     if (getKeyInput() !== '' && getValueInput() !== '') {
       if (keyExists(getKeyInput())) {
